@@ -1,0 +1,73 @@
+  body {
+    width: 760px;
+    vertical-align: top;
+    overflow-x: hidden;
+    margin: 12px 12px;
+  }
+  
+  div.container {
+    min-height: 400px;
+  }  
+
+  .visible {
+  	display: block;
+  }
+
+  .hidden {
+  	display: none;
+  }
+  
+  .nav img {
+  	margin: 10px 14px 0px 10px;
+  }
+  
+  .breadcrumb {
+	padding: 0px; 
+	margin-bottom: 0px;
+	list-style: none;
+	background-color: transparent; 
+	border-radius: 4px;
+  }
+  
+  #embedTemplate {
+  	width:100%; 
+  	height: 80px; 
+  	font-size: .8em;
+  }
+  
+  .spinner {
+  	height: 40px;
+  	width: 100%;
+  	text-align: center;
+  }
+  
+  .spinner img {
+    height: 20px;
+  }
+  
+  .norows {
+  	text-align: center;
+  }
+  
+  div.tweet_image {
+    width: 80%; /* or whatever is required */
+    height: 120px;
+    text-align: center; /* ensures the image is always in the h-middle */
+    overflow: hidden; /* hide the cropped portion */
+    margin: 6px 0px;
+    border: 1px solid #ccc;
+  }
+	
+  /* Set the image to fill its parent and make transparent */
+  img.tweet_image {
+    position: relative; /* allows repositioning */
+    margin-top: -10%;
+    margin-left: -200%; /* magic! */  
+    left: 100%; /* move the whole width of the image to the right */
+    width: 100%;
+  }
+
+  img.external {
+  	opacity: 0.5;
+  	margin: 0px 0px 0px 6px;
+  }
