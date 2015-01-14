@@ -1,9 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Reporter Plugin v0.1",
-  "description": "Plugin to help reporters discover and publish Twitter content.",
+  "name": "TwitterDev Reporter Plugin v0.1",
+  "description": "Chrome plugin to help reporters curate tweets and publish Twitter content to their CMS systems.",
   "version": "0.0.1",
-  "update_url": "http://go/chrome-ext/update",
   "options_page": "page.html?page=settings",
 
   "permissions": [
