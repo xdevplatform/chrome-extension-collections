@@ -3,6 +3,10 @@
  * any model/controller logic is deferred to background.js.
  */
 
+// BUGBUG:
+// - Tutorial to get started/button at top to embed
+// - Copy to clipboard functionality!
+
 $(document).ready(function() {
 
 	Settings.init(function(){
@@ -200,13 +204,20 @@ var CollectionsPage = {
 		
 		// tweet select: individual
 		$(document).on("click", ".tweet_check", function(){
+			
+			// on de-select, handle the "all selected" action 
+			var prop = $(this).prop('checked');
+			if (!prop){
+				$(".tweet_check_all").prop('checked', false);
+			}
+			
 			var count = 0;
 			$(".tweet_check").each(function(){
 				if ($(this).prop('checked')){
 					count = count + 1;
 				}
 			});
-			 if (count > 1){
+			 if (count > 0){
 				 $("#tweets_actions_embed").show();
 			 } else {
 				 $("#tweets_actions_embed").hide();
@@ -312,11 +323,27 @@ var CollectionsPage = {
 				if (response.error){
 					Page.setError(response.error);
 				} else {
+					
+					var collectionId = response.collectionId;
+					
 					var properties = {
-						lastUsedCollectionId : response.collectionId
+						lastUsedCollectionId : collectionId
 					};
 					Settings.save(properties, function(){
 						Page.setStatus("Tweet(s) saved.");
+						
+						// Add to collection drop-down and set the collection ID in page, 
+						// so "View Collection" button works
+						var option = $("<option></option>").attr("value",collectionId).text(collectionName);
+					    $('#save_collection_id').prepend(option);
+					    
+					    // set as new default
+					    $('#save_collection_id').val(collectionId);
+					    
+					    // hide inputs
+					    $("#save_collection_id").change();
+					    
+						
 					});
 					
 				}
@@ -526,6 +553,7 @@ var CollectionsPage = {
 			$("#collections_breadcrumb li:last").html(nameWithLink).show();
 		}
 
+		// BUGBUG: might need to fix this too
 		$(".tweet_check_all").prop('checked', false);
 		
 		$("#tweets_embed").data("collection-id", collectionId);
@@ -591,6 +619,9 @@ var CollectionsPage = {
 				 	 }
 				 });
 			     $("#tweets_rows").disableSelection();
+			     
+				// default to selecting them all
+				$(".tweet_check_all").click();
 
 			 });
 
