@@ -4,7 +4,6 @@
  */
 
 // BUGBUG:
-// - Tutorial to get started/button at top to embed
 // - Copy to clipboard functionality!
 
 $(document).ready(function() {
