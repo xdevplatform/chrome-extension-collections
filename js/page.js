@@ -31,6 +31,7 @@ var Page = {
 
 		CollectionsPage.init();
 		SettingsPage.init();
+		TutorialPage.init();
 		Page.setDefault();
 
 	},
@@ -50,6 +51,8 @@ var Page = {
 		var page = QueryString.get("page", "collections");
 		if ((Settings.ONLINE && !isAuthenticated) || page == 'settings') {
 			SettingsPage.showTab();
+		} else if (page == 'tutorial'){
+			TutorialPage.showTab();
 		} else if (page == 'save'){
 			CollectionsPage.showTab();
 			CollectionsPage.showSaveTweet();
@@ -553,9 +556,6 @@ var CollectionsPage = {
 			$("#collections_breadcrumb li:last").html(nameWithLink).show();
 		}
 
-		// BUGBUG: might need to fix this too
-		$(".tweet_check_all").prop('checked', false);
-		
 		$("#tweets_embed").data("collection-id", collectionId);
 		$("#tweets_remove").data("collection-id", collectionId);
 		$("#tweets_order").data("collection-id", collectionId);
@@ -629,6 +629,17 @@ var CollectionsPage = {
 		
 	},
 
+}
+
+var TutorialPage = {
+		
+	init : function() {
+		
+	},
+
+	showTab : function() {
+		$('#myTab a[href="#tutorial"]').tab('show');
+	}
 }
 
 var SettingsPage = {

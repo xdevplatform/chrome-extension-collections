@@ -71,3 +71,12 @@
   	opacity: 0.5;
   	margin: 0px 0px 0px 6px;
   }
+  
+  img.tutorial {
+  	border: 1px solid #aaa;
+  	background-color: #eee;
+  	padding: 6px;
+  	margin: 18px auto 18px 0px;
+  	width: 65%;
+  	display:block;
+  }
