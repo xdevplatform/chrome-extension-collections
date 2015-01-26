@@ -119,7 +119,7 @@ var CollectionsPage = {
 			};
 
 			chrome.runtime.sendMessage(request, function(response) {
-				Page.setStatus("Tweet(s) embedded and copied to clipboard.");
+				Page.setStatus("Tweet(s) embedded at cursor and copied to clipboard.");
 				
 				// Page.setStatus(JSON.stringify(response));
 				CollectionsPage.copyToClipboard(response.content);
@@ -143,7 +143,7 @@ var CollectionsPage = {
 
 			chrome.runtime.sendMessage(request, function(response) {
 				$("#tweets_actions_embed").hide();
-				Page.setStatus("Tweet(s) embedded and copied to clipboard.");
+				Page.setStatus("Tweet(s) embedded at cursor and copied to clipboard.");
 				
 				// Page.setStatus(JSON.stringify(response));
 				CollectionsPage.copyToClipboard(response.content);
