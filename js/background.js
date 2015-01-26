@@ -266,8 +266,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	
 	if (type == "background.embedTweets") {
 		var tweetIds = request.ids;
-		Twitter.embedTweets(tweetIds, function(){
-			sendResponse({});
+		Twitter.embedTweets(tweetIds, function(content){
+			sendResponse({content: content});
 		});
 		
 		// allow async callback of sendResponse()

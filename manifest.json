@@ -6,6 +6,8 @@
   "options_page": "page.html?page=settings",
 
   "permissions": [
+    "clipboardWrite",
+    "clipboardRead",
     "tabs",
     "contextMenus",
     "storage",

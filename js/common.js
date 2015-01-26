@@ -263,7 +263,7 @@ var Twitter = {
 			}, function(tabs) {
 				chrome.tabs.sendMessage(tabs[0].id, request, function(el) {
 					if (callback){
-						callback();
+						callback(contentAll);
 					}
 				});
 			});

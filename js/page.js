@@ -119,7 +119,10 @@ var CollectionsPage = {
 			};
 
 			chrome.runtime.sendMessage(request, function(response) {
-				Page.setStatus("Tweet(s) embedded.");
+				Page.setStatus("Tweet(s) embedded and copied to clipboard.");
+				
+				// Page.setStatus(JSON.stringify(response));
+				CollectionsPage.copyToClipboard(response.content);
 			});
 
 		});
@@ -140,7 +143,10 @@ var CollectionsPage = {
 
 			chrome.runtime.sendMessage(request, function(response) {
 				$("#tweets_actions_embed").hide();
-				Page.setStatus("Tweet(s) embedded.");
+				Page.setStatus("Tweet(s) embedded and copied to clipboard.");
+				
+				// Page.setStatus(JSON.stringify(response));
+				CollectionsPage.copyToClipboard(response.content);
 			});
 
 		});
@@ -398,6 +404,16 @@ var CollectionsPage = {
 
 	},
 	
+	copyToClipboard : function(content){
+	    var el = document.createElement("textarea");
+	    el.textContent = content;
+	    document.body.appendChild(el);
+	    el.focus();
+	    document.execCommand('SelectAll');
+	    document.execCommand('Copy');
+	    document.body.removeChild(el);
+	},
+	
 	hideAll : function(){
 		$("#save_container").hide();
 		$("#collections_breadcrumb").hide();
@@ -620,6 +636,7 @@ var CollectionsPage = {
 			     $("#tweets_rows").disableSelection();
 			     
 				// default to selecting them all
+			     $(".tweet_check_all").prop("checked", false);
 				$(".tweet_check_all").click();
 
 			 });
