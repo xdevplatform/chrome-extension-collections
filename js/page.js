@@ -705,6 +705,8 @@ var SettingsPage = {
 					Settings.save(properties, function(){
 						Page.setStatus(status);
 						SettingsPage.setState(true, false);
+						
+						URL.open("tutorial");
 					});
 
 				} else {
