@@ -400,7 +400,6 @@ var Codebird = function () {
 
                 "timelines/custom/list",
                 "timelines/timeline",
-                "beta/timelines/timeline",
                 "timelines/custom/show",
                 "collections/list",
                 "collections/show",

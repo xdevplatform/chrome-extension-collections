@@ -105,6 +105,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     				count : 25,
     				user_id : Twitter.user.id
     			}, function(response) {
+    				console.log("response:");
+    				console.log(JSON.stringify(response));
     				sendResponse(response);
     			});
 
