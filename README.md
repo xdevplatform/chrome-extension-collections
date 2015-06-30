@@ -1,16 +1,17 @@
-Twitter Reporter Plugin v0.1
+TwitterDev Collections Chrome Extension v0.1
 =====
 
-Chrome plugin to curate tweets from twitter.com into user-managed collections. These tweets are then easily embedded into a blog post/CMS system with a Twitter button in your Chrome browser. (Embedded tweets use the Twitter oEmbed API.)
+Chrome extension to curate tweets from twitter.com into user-managed collections. These tweets are then easily embedded into a blog post/CMS system with a Twitter button in your Chrome browser. (Embedded tweets use the Twitter oEmbed API.)
 
-This tool is made open source by the @TwitterDev team as a reference for how to integrate Twitter + your tools + Chrome browser for an optimal user experience. Other potential uses for this open source plugin might include:
+This tool is made open source by the @TwitterDev team as a reference for how to integrate Twitter + your tools + Chrome browser for an optimal user experience. Other potential uses for this open source extension might include:
 
 - Tweet collection and embedding into custom CMS systems
 - Integrating tweet discovery and curation tools for reporters or storytellers
 - Tweet curation for photo walls or galleries
 
-This plugin uses the Twitter Collections API as the back-end storage to save and manage tweets. Tweets managed by other Collections-compatible Twitter clients (including TweetDeck, Curator and twitter.com) can be used to collect and manage tweets for embedding. For access to the Twitter Collections API, please read the Development section below for instructions on how to get access.
+This extension uses the Twitter Collections API as the back-end storage to save and manage tweets. Tweets managed by other Collections-compatible Twitter clients (including TweetDeck, Curator and twitter.com) can be used to collect and manage tweets for embedding. For access to the Twitter Collections API, please read the Development section below for instructions on how to get access.
 
+Please note that this sample uses Twitter Collections, which requires additional app permissions. If you choose to use this or a derivation for production purposes, contact Twitter directly to enable your app with the Collections Beta permissions. More info about collections and access can be found here: [https://dev.twitter.com/rest/collections/about](https://dev.twitter.com/rest/collections/about) 
 
 Usage
 --------
@@ -48,7 +49,7 @@ Embedded Tweets are customizable, allowing for media, threaded conversations, li
 Installation
 --------
 
-To install this Chrome Plugin, follow the below instructions.
+To install this Chrome Extension, follow the below instructions.
 
 ##### Step 1: Open Chrome and go to the Extensions Page.
 
@@ -68,7 +69,7 @@ After you drop, click on the "Add" button in the prompt.
 
 After installation, a browser window will also pop-up with the extension's settings page. If it does not, follow Step 3 below to open the extension's settings window manually.
 
-##### Step 3: Find "Reporter Plugin v0.1" in the Extensions list and click  "Options".
+##### Step 3: Find "TwitterDev Collections Extension v0.0.2" in the Extensions list and click  "Options".
 
 This will take you to the Extension's own settings page. (Different from your browser's settings.)
 
@@ -106,7 +107,7 @@ If you experience an error, please try the login process again. If you continue 
 Dependencies
 --------
 
-The following libraries are used in this plugin. All libraries are included
+The following libraries are used in this extension. All libraries are included
 under the js/lib directory to make this source self-contained. 
 
 - Bootstrap (3.0.3): http://getbootstrap.com/ 
@@ -119,9 +120,9 @@ under the js/lib directory to make this source self-contained.
 Development
 --------
 
-This sample uses Twitter Collections, which is in Beta and requires additional app permissions. This code ships with default auth tokens, so that developers can being developing and testing immediately. 
+This sample uses Twitter Collections, which requires additional app permissions. This code ships with default auth tokens, so that developers can being developing and testing immediately. 
 
-If you choose to use this or a derivation for production purposes, contact Twitter directly to enable your app with the Collections Beta permissions. 
+If you choose to use this or a derivation for production purposes, contact Twitter directly to enable your app with the Collections Beta permissions. More info about collections and access can be found here: [https://dev.twitter.com/rest/collections/about](https://dev.twitter.com/rest/collections/about) 
  
 Lastly, the common.js file has an ONLINE flag that can be disabled for quick development and  testing without a network connection. Consider using this flag when making iterative UI changes. 
 
