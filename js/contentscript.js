@@ -7,7 +7,7 @@
 var Collections = {
 
 	TWEET_ACTION : "<div class='ProfileTweet-action ProfileTweet-action--collection js-toggleState' data-url='%URL%'>" +
-		"<span class='ProfileTweet-actionButton' style='font-weight:bold; font-size: 1.8em; margin-top:-.2em;' onmouseover='this.style.color=\"#3B94D9\";' onmouseout='this.style.color=\"#ccd6dd\";');return false;'>&plus;</span>" +
+		"<button class='ProfileTweet-actionButton u-textUserColorHover js-actionButton' type='button'><div class='IconContainer js-tooltip' title='Collections'><span class='Icon Icon--add'></span><span class='u-hiddenVisually'>Collections</span></div></button>" +
 		"</div>",
 		
 	MODAL : "<div id='collectionModal'><div id='dialog'>" +
